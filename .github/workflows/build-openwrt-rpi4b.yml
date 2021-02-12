@@ -135,7 +135,7 @@ jobs:
         echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
         echo "::set-output name=url::$(cat wetransfer.log | grep https | cut -f3 -d" ")"
      
-        - name: Rclone Upload
+    - name: Rclone Upload
         env:
           RCLONE_PACKAGE: ${{ secrets.RCLONE_PACKAGE }}
           RCLONE_FIRMWARE: ${{ secrets.RCLONE_FIRMWARE }}
